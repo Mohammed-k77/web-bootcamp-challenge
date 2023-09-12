@@ -1,0 +1,31 @@
+body{
+    background-color: #000;
+  }
+
+  .continer {
+    width: fit-content;
+    margin: 6% 30%;
+  }
+  .chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 500px;
+    height: 500px;
+  }
+
+  .chessboard div {
+    border: 1px solid #000000;
+  }
+
+  .chessboard .white {
+    background-color: #ffffff;
+    font-size: 35px;
+    text-align: center;
+  }
+
+  .chessboard .black {
+    background-color: #cc8418;
+    font-size: 35px;
+    text-align: center;
+  }
