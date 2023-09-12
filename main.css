@@ -29,3 +29,7 @@ body{
     font-size: 35px;
     text-align: center;
   }
+
+  .blackQuine div{
+    color: #000;
+  }
