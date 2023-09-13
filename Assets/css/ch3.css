@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url("C:\\Users\\G.B\\OneDrive\\سطح المكتب\\time-style\\assets\\img\\background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+.headTitle
+{
+    font-size: 30px;
+    margin: 36px 0 0 147px;
+    color: white;
+    letter-spacing: 8px;
+}
+.continer{
+    margin: 18% 51% 17% 10%;
+    display: flex;
+    justify-content: space-between;
+}
+.content{
+    margin: 10px;
+}
+
+.content .num{
+    color: red;
+    background-image: linear-gradient(to bottom, #000000, #333333);
+    font-size: 40px;
+    line-height: 1.5;
+    height: 100px;
+    text-align: center;
+    font-family: fantasy;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .text{
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    margin-top: 20px;
+}
