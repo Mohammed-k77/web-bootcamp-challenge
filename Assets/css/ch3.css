@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-image: url("C:\\Users\\G.B\\OneDrive\\سطح المكتب\\time-style\\assets\\img\\background.jpg");
+    background-image: url("../img/background.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -50,4 +50,28 @@ body{
     color: white;
     font-size: 15px;
     margin-top: 20px;
+}
+
+.next{
+  position: absolute;
+  top: 75%;
+  left: 20%;
+  color: #fff;
+  font-size: 40px;
+}
+
+.home{
+    position: absolute;
+    top: 75%;
+    left: 15%;
+    color: #fff;
+    font-size: 40px;
+}
+
+.back{
+  position: absolute;
+  top: 75%;
+  left: 10%;
+  color: #fff;
+  font-size: 40px;
 }

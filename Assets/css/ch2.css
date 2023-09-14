@@ -24,12 +24,36 @@ body{
     text-align: center;
   }
 
-  .chessboard .black {
-    background-color: #cc8418;
-    font-size: 35px;
-    text-align: center;
-  }
+.chessboard .black {
+  background-color: #cc8418;
+  font-size: 35px;
+  text-align: center;
+}
 
-  .blackQuine div{
-    color: #000;
-  }
+.blackQuine div{
+  color: #000;
+}
+
+.next{
+  position: absolute;
+  top: 75%;
+  left: 20%;
+  color: #fff;
+  font-size: 40px;
+}
+
+.home{
+    position: absolute;
+    top: 75%;
+    left: 15%;
+    color: #fff;
+    font-size: 40px;
+}
+
+.back{
+  position: absolute;
+  top: 75%;
+  left: 10%;
+  color: #fff;
+  font-size: 40px;
+}
