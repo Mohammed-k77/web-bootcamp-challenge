@@ -107,27 +107,10 @@
             text-transform: uppercase;
         }
 
-        .mainContent{
-            column-count: 3;
-        }
-
-        .mainContiner{
-             columns:2; 
-        }
-
-        .sideparImage{
-            width: 50%;
-        }
-
-        .continer{
-            width: 40%;
-        }
-
     </style>
 </head>
 <body>
     <div class="mainContiner">
-        <img class="sideparImage" src="./1133687.jpg">
         <div class="continer">
             <hr>
             <h1>the daily news</h1>
@@ -140,7 +123,7 @@
                 <h2>insert your headingline here </h2>
                 <div class="descriptionContent">
                     <div class="side side1">
-                        <img src="1133687.jpg">
+                        <img src="../Assets/img/ch11.jpg">
                         <div class="artical">
                             <h3>ARTICLE HEADLINE</h3>
                             <p>Lorem ipsum dolor sit amet consectetur,
@@ -189,7 +172,6 @@
                                 tenetur nam delectus magnam sapiente fugiat nulla
                                 ea dicta similique quis, consequatur tempore.</p>
                         </div>
-    
                     </div>
                     <div class="side">
                         <p>Lorem ipsum dolor sit amet consectetur,
@@ -284,7 +266,7 @@
                             recusandae delectus soluta modi tempore! Eaque
                             tenetur nam delectus magnam sapiente fugiat nulla
                             ea dicta similique quis, consequatur tempore.
-                    </div>
+                    </div
                 </div>
             </div>
         </div>
@@ -293,8 +275,8 @@
     <div class="links-continer">
         <a href="../index.html"><i class="fa fas fa-home home-icon"></i></a>
         <div class="left-right">
-           <i class="fa-solid fa-chevron-left left-link"></i> 
-           <i class="fa-solid fa-chevron-right right-link"></i> 
+            <i onclick="nextLink()" onclick="privuosLink()" class="fa-solid fa-chevron-left left-link"></i> 
+            <i onclick="privuosLink()" class="fa-solid fa-chevron-right right-link"></i> 
         </div>
         <div class="page-links">
             <ul>
@@ -332,6 +314,7 @@
         </div>
     </div>
     
+    <script src="../fontawesome-v6.4.2/js/all.js"> </script>
     <script src="../Assets/js/links.js"></script>
 </body>
 </html>

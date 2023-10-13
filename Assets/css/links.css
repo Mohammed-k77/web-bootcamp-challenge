@@ -67,7 +67,7 @@ body{
     transition: all 0.3s ease-in-out;
 }
 
-.page-links ul li{
+.links-continer .page-links ul li{
     text-align: center;
     font-weight: bold;
     width: 33px;
@@ -79,15 +79,15 @@ body{
     border-radius: 5px;
 }
 
-.page-links ul li:hover{
+.links-continer .page-links ul li:hover{
     opacity: 1;
 }
 
-.page-links ul li:focus{
+.links-continer .page-links ul li:focus{
     opacity: 1;
 }
 
-.page-links ul li a{
+.links-continer .page-links ul li a{
     text-decoration: none;
     color: white;
 }
