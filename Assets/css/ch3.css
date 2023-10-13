@@ -52,26 +52,3 @@ body{
     margin-top: 20px;
 }
 
-.next{
-  position: absolute;
-  top: 75%;
-  left: 20%;
-  color: #fff;
-  font-size: 40px;
-}
-
-.home{
-    position: absolute;
-    top: 75%;
-    left: 15%;
-    color: #fff;
-    font-size: 40px;
-}
-
-.back{
-  position: absolute;
-  top: 75%;
-  left: 10%;
-  color: #fff;
-  font-size: 40px;
-}

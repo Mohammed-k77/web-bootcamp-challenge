@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../fontawesome-v6.4.2/css/all.css">
+    <link rel="stylesheet" href="../Assets/css/links.css">
+    
+    <title>Grid and transformation</title>
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #d0dde1;
+        }
+
+        .continer{
+            margin: 2% 3%;
+        }  
+        
+        .continer p , .continer h3 {
+            text-align: left;
+        }  
+        
+        .continer .content{
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+            grid-auto-rows: 60px;
+            grid-auto-flow: dense;
+            box-shadow: 1px 1px 15px black;
+        }
+
+        .space{
+            grid-column: 1 / span 2;
+        }
+
+        .days-space{
+            grid-column: 3 / span 14;
+        }
+
+        .bordered-l-b{
+            border-left: 1px solid #d0dde1;
+            border-bottom: 1px solid #d0dde1;
+        }
+
+        .bordered-b{
+            border-bottom: 1px solid #d0dde1;
+        }
+
+        .duble-row{
+            grid-row: 4 / span 2;
+        }
+
+        .box{
+            height: 60px;
+            width: 92px;
+        }
+
+        .space , .mounth {
+            background-color: #0a3444;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+        }
+
+        .gray{
+            background-color: #f5f5f5;
+            color: black;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .white{
+            background-color: #ffffff;
+            color: black;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .off-space{
+            grid-column: 3 / span 14;    
+            background-color: #ffd6d2;       
+        }
+
+        .row2{
+            grid-row: 2;
+        }
+        .row3{
+            grid-row: 3;
+        }
+        .row4{
+            grid-row: 4;
+        }
+        .row5{
+            grid-row: 5;
+        }
+        .row6{
+            grid-row: 6;
+        }
+        .row7{
+            grid-row: 7;
+        }
+        .row8{
+            grid-row: 8;
+        }
+        .row9{
+            grid-row: 9;
+        }
+        .row10{
+            grid-row: 10;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .probar{
+            position: absolute;
+            text-align: left;
+            font-size: 1em;
+            padding: 8px;
+            font-family: serif;
+            color: white;
+            margin: 10px 0;
+            border-radius: 55px;
+            height: 34px;
+        }
+
+        .row2-greenprobar{
+            width: 704%;
+            background-color: #2ecaac;
+        }
+
+        .row4-greenprobar{
+            width: 300%;
+            background-color: #2ecaac;
+        }
+
+        .row5-redprobar{
+            width: 505%;
+            top: 60px;
+            z-index: 2;
+            background: repeating-linear-gradient(35deg, #fb1801 31%, #ff9287 35%);
+        }
+
+        .margin-buttom{
+            margin: 0 0 57px 0;
+        }
+
+        .row5-blueprobar{
+            width: 403%;
+            background-color:#54c6f9;
+        }
+
+        .row8-greenprobar{
+            width: 300%;
+            background-color:#2ecaac;
+        }
+
+        .row9-blueprobar{
+            width: 502%;
+            background-color:#54c6f9;
+        }
+
+        .row10-redprobar{
+            position: absolute;
+            width: 503%;
+            background: repeating-linear-gradient(35deg, #fb1801 31%, #ff9287 35%);
+        }
+
+        .shaddow{
+            background-color: #00000012;
+            position: absolute;
+            border-right: 1px solid darkgray;
+            height: 100%;
+            right: 35.8%;
+            width: 90px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="continer">
+        <div class="content">
+            <div class="space"></div>
+            <div class="mounth box bordered-l-b">Jan</div>
+            <div class="mounth box bordered-l-b">Fep</div>
+            <div class="mounth box bordered-l-b">Mar</div>
+            <div class="mounth box bordered-l-b">Apr</div>
+            <div class="mounth box bordered-l-b">May</div>
+            <div class="mounth box bordered-l-b">Jun</div>
+            <div class="mounth box bordered-l-b">Jul</div>
+            <div class="mounth box bordered-l-b">Aug</div>
+            <div class="mounth box bordered-l-b">Sep</div>
+            <div class="mounth box bordered-l-b">Oct</div>
+            <div class="mounth box bordered-l-b">Nov</div>
+            <div class="mounth box bordered-l-b">Des</div>
+            <div class="space gray row2 bordered-b">Barnard Posselt</div>
+            <div class="space white row3 bordered-b">Ryley Huggons</div>
+            <div class="space gray duble-row bordered-b"><p class="margin-buttom">Lanie Erwin</p></div>
+            <div class="space white row6 bordered-b">Krishnah Pauleit</div>
+            <div class="space gray row7 bordered-b">Hobard Lampitt</div>
+            <div class="space white row8 bordered-b">Virgilio jeanes</div>
+            <div class="space gray row9 bordered-b">Ky Verick</div>
+            <div class="space white row10 bordered-b">Ketti Wateworth</div>
+            <div class="gray box row2 bordered-l-b"></div>
+            <div class="gray box row2 bordered-l-b"></div>
+            <div class="gray box row2 bordered-l-b"></div>
+            <div class="gray box row2 bordered-l-b relative">
+                <div class="probar row2-greenprobar">
+                    <p>Even longer project</p>
+                </div>
+            </div>
+            <div class="gray box row2 bordered-l-b"></div>
+            <div class="gray box row2 bordered-l-b"></div>
+            <div class="gray box row2 bordered-l-b"></div>
+            <div class="gray box row2 bordered-l-b"></div>
+            <div class="gray box row2 bordered-l-b"></div>
+            <div class="gray box row2 bordered-l-b"></div>
+            <div class="gray box row2 bordered-l-b "></div>
+            <div class="gray box row2 bordered-l-b"></div>
+            <div class="white off-space bordered-l-b"></div>
+            <div class="gray duble-row bordered-l-b relative">
+                <div class="probar row5-redprobar"></div>
+            </div>
+            <div class="gray duble-row bordered-l-b relative">
+                <div class="probar row4-greenprobar">
+                    <p>Start Februar 🙌</p>
+                </div>
+            </div>
+            <div class="gray duble-row bordered-l-b"></div>
+            <div class="gray duble-row bordered-l-b"></div>
+            <div class="gray duble-row bordered-l-b"></div>
+            <div class="gray duble-row bordered-l-b"></div>
+            <div class="gray duble-row bordered-l-b relative">
+                <div class="probar row5-blueprobar">
+                    <p>Same line</p>
+                </div>
+            </div>
+            <div class="gray duble-row bordered-l-b"></div>
+            <div class="gray duble-row bordered-l-b"></div>
+            <div class="gray duble-row bordered-l-b"></div>
+            <div class="gray duble-row bordered-l-b"></div>
+            <div class="gray duble-row bordered-l-b"></div>
+            <div class="gray duble-row bordered-l-b"></div>
+            <div class="gray duble-row bordered-l-b"></div>
+            <div class="off-space bordered-l-b"></div>
+            <div class="off-space bordered-l-b"></div>
+            <div class="white box row8 bordered-l-b"></div>
+            <div class="white box row8 bordered-l-b relative">
+                <div class="probar row8-greenprobar"></div>
+            </div>
+            <div class="white box row8 bordered-l-b"></div>
+            <div class="white box row8 bordered-l-b"></div>
+            <div class="white box row8 bordered-l-b"></div>
+            <div class="white box row8 bordered-l-b"></div>
+            <div class="white box row8 bordered-l-b"></div>
+            <div class="white box row8 bordered-l-b"></div>
+            <div class="white box row8 bordered-l-b"></div>
+            <div class="white box row8 bordered-l-b"></div>
+            <div class="white box row8 bordered-l-b"></div>
+            <div class="white box row8 bordered-l-b"></div>
+            <div class="gray box row9 bordered-l-b"></div>
+            <div class="gray box row9 bordered-l-b"></div>
+            <div class="gray box row9 bordered-l-b relative">
+                <div class="probar row9-blueprobar">
+                    <p>Long project</p>
+                </div>
+            </div>
+            <div class="gray box row9 bordered-l-b"></div>
+            <div class="gray box row9 bordered-l-b"></div>
+            <div class="gray box row9 bordered-l-b"></div>
+            <div class="gray box row9 bordered-l-b"></div>
+            <div class="gray box row9 bordered-l-b"></div>
+            <div class="gray box row9 bordered-l-b"></div>
+            <div class="gray box row9 bordered-l-b"></div>
+            <div class="gray box row9 bordered-l-b"></div>
+            <div class="gray box row9 bordered-l-b"></div>
+            <div class="white box row10 bordered-l-b"></div>
+            <div class="white box row10 bordered-l-b"></div>
+            <div class="white box row10 bordered-l-b"></div>
+            <div class="white box row10 bordered-l-b relative">
+                <div class="probar row10-redprobar">
+                    <p>A title</p>
+                </div>
+            </div>
+            <div class="white box row10 bordered-l-b"></div>
+            <div class="white box row10 bordered-l-b"></div>
+            <div class="white box row10 bordered-l-b"></div>
+            <div class="white box row10 bordered-l-b"></div>
+            <div class="white box row10 bordered-l-b"></div>
+            <div class="white box row10 bordered-l-b"></div>
+            <div class="white box row10 bordered-l-b"></div>
+            <div class="white box row10 bordered-l-b"></div>
+            <div class="shaddow"></div>
+        </div>
+    </div>
+
+    <div class="links-continer">
+        <a href="../index.html"><i class="fa fas fa-home home-icon"></i></a>
+        <div class="left-right">
+           <i class="fa-solid fa-chevron-left left-link"></i> 
+           <i class="fa-solid fa-chevron-right right-link"></i> 
+        </div>
+        <div class="page-links">
+            <ul>
+                <li><a href="./ch1.html">1</a></li>
+                <li><a href="./ch2.html">2</a></li>
+                <li><a href="./ch3.html">3</a></li>
+                <li><a href="./ch4.html">4</a></li>
+                <li><a href="./ch5.html">5</a></li>
+                <li><a href="./ch6.html">6</a></li>
+                <li><a href="./ch7.html">7</a></li>
+                <li><a href="./ch8.html">8</a></li>
+                <li><a href="./ch9.html">9</a></li>
+                <li><a href="./ch10.html">10</a></li>
+                <li><a href="./ch11.html">11</a></li>
+                <li><a href="./ch12.html">12</a></li>
+                <li><a href="./ch13.html">13</a></li>
+                <li><a href="./ch14.html">14</a></li>
+                <li><a href="./ch15.html">15</a></li>
+                <li><a href="./ch16.html">16</a></li>
+                <li><a href="./ch17.html">17</a></li>
+                <li><a href="./ch18.html">18</a></li>
+                <li><a href="./ch19.html">19</a></li>
+                <li><a href="./ch20.html">20</a></li>
+                <li><a href="./ch21.html">21</a></li>
+                <li><a href="./ch22.html">22</a></li>
+                <li><a href="./ch23.html">23</a></li>
+                <li><a href="./ch24.html">24</a></li>
+                <li><a href="./ch25.html">25</a></li>
+                <li><a href="./ch26.html">26</a></li>
+                <li><a href="./ch27.html">27</a></li>
+                <li><a href="#">28</a></li>
+                <li><a href="#">29</a></li>
+                <li><a href="#">30</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="../Assets/js/links.js"></script>
+</body>
+</html>

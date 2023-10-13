@@ -57,26 +57,3 @@ text-align: justify;
     background-color: white;
 }
 
-.next{
-  position: absolute;
-  top: 75%;
-  left: 15%;
-  color: #000;
-  font-size: 40px;
-}
-
-.home{
-    position: absolute;
-    top: 75%;
-    left: 10%;
-    color: #000;
-    font-size: 40px;
-}
-
-.back{
-  position: absolute;
-  top: 75%;
-  left: 5%;
-  color: #000;
-  font-size: 40px;
-}
