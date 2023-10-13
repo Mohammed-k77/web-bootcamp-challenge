@@ -17,103 +17,56 @@
         }
 
         .continer{
-            margin: 22%;
+            margin: 4% 2%;
             background-color: #313131;
+        }
+
+        
+        .spinner1{
             display: flex;
-            justify-items: center;
+            grid-gap: 1em;
             justify-content: center;
+            align-items: center;
+            height: 40px;
         }
 
         .box1 , .box2 , .box3{
             height: 15px;
             width: 15px;
-            margin: 0 5px;
             background-color: rgba(238, 241, 10, 0.432);
+            transition: all 1s ease;
         }
 
         .box1{
-            animation-name: tick1;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
+            animation: tick 2s linear infinite;
         }
 
         .box2{
-            animation-name: tick2;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
+            animation: tick 2s linear infinite;
         }
 
         .box3{
-            animation-name: tick3;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
+            animation: tick 2s linear infinite;
         }
 
-        .box{
-            margin: 20%;
-            margin: -15% 26%;
-            width: 200PX;
-            height: 200PX;
-            text-align: center;
-            background-color: red;
-            animation-name: changeBackgroundcolor;
-            animation-duration: 5S;
-            animation-iteration-count: infinite;
-            animation-name: changeSkewy;
-            animation-duration: 4s;
-            animation-iteration-count: infinite;
-        }
-
-        @keyframes changeBackgroundcolor{
-            0% {background-color: red;}
-            25% {background-color: green;}
-            50% {background-color: black;}
-            100% {background-color: yellow;}
-        }
-
-        @keyframes changeSkewy{
-            0% {transform: skewX(-30deg);}
-            10% {transform: skewX(10deg);}
-            25% {transform: skewX(-10deg);}
-            50% {transform: rotate(80deg);}
-            75% {transform: rotate(-50deg);}
-            100% {transform: rotate(30deg);}
-        }
-
-        @keyframes tick1{
-            20%{
-                background-color: yellow;
+        @keyframes tick{
+            0%{
+                background-color: rgba(238, 241, 10, 0.432);;
                 transform: scale(2);
             }
-            50%{
-                background-color: rgba(238, 241, 10, 0.432);
-                transform: scale(1);
-            }
-        }
 
-        @keyframes tick2{
             50%{
                 background-color: yellow;
-                transform: scale(2);
-            }
-            70%{
-                background-color: rgba(238, 241, 10, 0.432);
                 transform: scale(1);
             }
-        }
 
-        @keyframes tick3{
-            70%{
-                background-color: yellow;
-                transform: scale(1.5);
-            }
             100%{
-                background-color: rgba(238, 241, 10, 0.432);
-                transform: scale(1);
+                background-color: yellow;
+                transform: scale(2);
             }
         }
 
-        .circle{
+        .spinner2{
             margin: 10% 0 0 132px;
         }
         
@@ -121,10 +74,10 @@
             margin: 10% 20%;
             display: inline-block;
             height: 19vh;
-            border-bottom: 2px solid transparent;
-            border-top: 2px solid black;
-            border-left: 2px solid black;
-            border-right: 2px solid black;
+            border-bottom: 4px solid transparent;
+            border-top: 4px solid white;
+            border-left: 4px solid white;
+            border-right: 4px solid white;
             width: 132px;
             border-radius: 50%;
             animation-name: tick4;
@@ -136,10 +89,10 @@
             margin: 10% 20%;
             display: inline-block;
             height: 9vh;
-            border-bottom: 2px solid transparent;
-            border-top: 2px solid black;
-            border-left: 2px solid black;
-            border-right: 2px solid black;
+            border-bottom: 4px solid white;
+            border-top: 4px solid white;
+            border-left: 4px solid transparent;
+            border-right: 4px solid white;
             width: 60px;
             border-radius: 50%;
             animation-name: tick5;
@@ -170,13 +123,12 @@
 </head>
 <body>
     <div class="continer">
-        <div class="box1"></div>
-        <div class="box2"></div>
-        <div class="box3"></div>
-        <div class="box">
-            <p style="font-size: 50px;">😒</p>
+        <div class="spinner1">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
         </div>
-        <div class="circle">
+        <div class="spinner2">
             <span class="out-circle">           
             </span>
             <span class="in-circle"></span>

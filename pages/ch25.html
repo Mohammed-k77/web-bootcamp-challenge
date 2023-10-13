@@ -38,9 +38,9 @@
             transition: transform 5s ease;
         }
 
-        /* .continer:hover .yellow-box{
+        .continer:hover .yellow-box{
             transform: skewY(15deg);         
-        } */
+        }
 
         .continer .yellow-box{
             height: 51vh;
@@ -84,6 +84,7 @@
             text-transform: uppercase;
             background-color: yellow;
             padding: 8px 31px;
+            transition: all 0.5s ease;
         }
 
         .backtext{
@@ -97,8 +98,10 @@
         .heart-icon{
             position: absolute;
             top: 15%;
+            z-index: 1;
             font-size: 44px;
-            left: 18%;
+            right: 5%;
+            top: 4%;
             color: black;
             cursor: pointer;
         }
@@ -119,30 +122,45 @@
             scale: 1.2;
         }
 
+        .btn-load{
+            position: absolute;
+            cursor: pointer;
+            left: 13%;
+            top: 25%;
+            border: none;
+            background-color: yellow;
+            font-size: 25px;
+            font-family: sans-serif;
+            padding: 10px 25px;
+            font-weight: bold;
+            color: black;
+            border-radius: 10px;
+        }
+
     </style>
 </head>
 <body>
     <div id="cart" class="continer">
+        <div class="Icon">
+            <i id="heart" onclick="document.getElementById('heart').classList.remove('heart-icon') ;
+             document.getElementById('heart').classList.add('heart-icon-clicked') 
+            alert('Done Is add to Your favorite')";
+             class="fa-solid fa-heart heart-icon"></i>
+        </div>
         <div class="yellow-box">
-            <div class="Icon">
-                <i id="heart" onclick="document.getElementById('heart').classList.remove('heart-icon') ;
-                 document.getElementById('heart').classList.add('heart-icon-clicked') 
-                alert('Done Is add to Your favorite')";
-                 class="fa-solid fa-heart heart-icon"></i>
-            </div>
         </div>
-        <img id="imgUrl" src="./Mario.png" alt="Loadding">
+        <img id="imgUrl" src="../Assets/img/Mario.png" alt="Loadding">
         <div class="text">
-            <p id="p"></p>
-            <h3 id="h3"></h3>
+            <p id="p">SUBER Mario</p>
+            <h3 id="h3">61.98 $</h3>
         </div>
-        <h1 id="h1" class="backtext"></h1>
+        <h1 id="h1" class="backtext">SUBER Mario</h1>
         <button onclick="alert('You buy this prouduct by this cost') ;
          document.getElementById('cart').style.transition='transform 15s ease';
-         document.getElementById('cart').style.translate='-35px -120%'; " id="btn" class="btn"></button>
+         document.getElementById('cart').style.translate='-35px -120%'; " id="btn" class="btn">Buy Now</button>
     </div>
+    <button onclick="LoadContent()" class="btn-load">Load From Js</button>
 
-        
     <div class="links-continer">
         <a href="../index.html"><i class="fa fas fa-home home-icon"></i></a>
         <div class="left-right">
@@ -189,17 +207,17 @@
     <script src="../Assets/js/links.js"></script>
 
     <script>
-            let x = {Name :'SUBER MARIO'
-                    ,Price:'61.98 €'
-                    ,content:'Buy Now'}
+        function LoadContent(){
+            let x = {Name :'SUBER JS'
+                    ,Price:'61.98 JS'
+                    ,content:'Buy JS'}
 
             document.getElementById('p').innerHTML=x.Name;
             document.getElementById('h3').innerHTML=x.Price;
             document.getElementById('h1').innerHTML=x.Name;
             document.getElementById('btn').innerHTML=x.content;
-            document.getElementById('imgUrl').src='./m.png';  
-
-            
+            document.getElementById('imgUrl').src='../Assets/img/m.png';  
+        }
 
     </script>
 </body>
