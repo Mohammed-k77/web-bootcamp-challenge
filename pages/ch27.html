@@ -13,12 +13,12 @@
     <style>
 
         body{
-            background-color: #313131;
+            background-color: #0B2447;
         }
 
         .continer{
-            margin: 4% 2%;
-            background-color: #313131;
+            margin: 4% 0;
+            background-color: #0B2447;
         }
 
         
@@ -33,90 +33,188 @@
         .box1 , .box2 , .box3{
             height: 15px;
             width: 15px;
-            background-color: rgba(238, 241, 10, 0.432);
-            transition: all 1s ease;
+            background-color: #edf10a5e;
         }
 
         .box1{
-            animation: tick 2s linear infinite;
+            animation: tick 1s linear infinite;
         }
 
         .box2{
-            animation: tick 2s linear infinite;
+            animation: tick 1s linear infinite;
+            animation-delay: 0.2s;
         }
 
         .box3{
-            animation: tick 2s linear infinite;
+            animation: tick 1s linear infinite;
+            animation-delay: 0.4s;
         }
 
         @keyframes tick{
             0%{
-                background-color: rgba(238, 241, 10, 0.432);;
-                transform: scale(2);
-            }
-
-            50%{
-                background-color: yellow;
+                background-color: #edf10a5e;
                 transform: scale(1);
             }
 
-            100%{
+            30%{
+                background-color: #edf10aa6;
+                transform: scale(1.5);
+            }
+
+            60%{
                 background-color: yellow;
                 transform: scale(2);
+            }
+
+            80%{
+                background-color: #edf10aa6;
+                transform: scale(1.5);
+            }
+
+            100%{
+                background-color: #edf10a5e;
+                transform: scale(1);
             }
         }
 
         .spinner2{
-            margin: 10% 0 0 132px;
+            height: 200px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            position: relative;
         }
         
-        .circle .out-circle{
+        .spinner2 .out-circle{
             margin: 10% 20%;
-            display: inline-block;
-            height: 19vh;
+            position: absolute;
+            height: 100px;
+            margin: 0;
             border-bottom: 4px solid transparent;
             border-top: 4px solid white;
             border-left: 4px solid white;
             border-right: 4px solid white;
-            width: 132px;
+            width: 100px;
             border-radius: 50%;
-            animation-name: tick4;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
+            animation: tick2 1s linear infinite;
         }
 
-        .circle .in-circle{
-            margin: 10% 20%;
-            display: inline-block;
-            height: 9vh;
+        .spinner2 .in-circle{
+            position: absolute;
+            height: 60px;
+            padding: m;
             border-bottom: 4px solid white;
             border-top: 4px solid white;
             border-left: 4px solid transparent;
             border-right: 4px solid white;
             width: 60px;
             border-radius: 50%;
-            animation-name: tick5;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
+            animation: tick2 1s linear infinite;
+            animation-direction: reverse;
         }
 
-        @keyframes tick4{
+        @keyframes tick2{
             0%{
                 transform: rotate(0deg);
             }
+
             100%{
                 transform: rotate(360deg);
             }
         }
 
-        @keyframes tick5{
+        .spinner3{
+            height: 100px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            position: relative;
+        }
+
+        .spinner3 .circle{
+            position: absolute;
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            background-color: white;
+            animation: tick3 0.3s linear infinite;
+        }
+
+        @keyframes tick3{
             0%{
-                transform: rotate(0deg);
+                transform: scale(1);
             }
             100%{
-                transform: rotate(-180deg);
+                transform: scale(0.5);
+                opacity: 0.5;
             }
         }
+
+        .spinner4{
+            display: flex;
+            grid-gap: 1em;
+            height: 70px;
+            align-items: center;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .spinner4 .circle{
+            position: absolute;
+            border-radius: 50%;
+            height: 1em;
+            width: 1em;
+            left: -3%;
+            background-color: white;
+        }
+
+        .num1{
+            animation: tick4 1.5s linear infinite;
+        }
+
+        .num2{
+            animation: tick4 1.5s linear infinite;
+            animation-delay: 0.3s;
+        }
+
+        .num3{
+            animation: tick4 1.5s linear infinite;
+            animation-delay: 0.6s;
+        }
+
+        .num4{
+            animation: tick4 1.5s linear infinite;
+            animation-delay: 0.9s;
+        }
+
+        @keyframes tick4 {
+            0%{
+                transform: translateX(0em);
+            }
+
+            20%{
+                transform: translateX(40em);
+            }
+
+            40%{
+                transform: translateX(43em);
+            }
+
+            60%{
+                transform: translateX(46em);
+            }
+
+            80%{
+                transform: translateX(49em);
+            }
+
+            100%{
+                transform: translateX(88em);
+            }
+        }
+
+
 
 
     </style>
@@ -132,6 +230,15 @@
             <span class="out-circle">           
             </span>
             <span class="in-circle"></span>
+        </div>
+        <div class="spinner3">
+            <div class="circle"></div>
+        </div>
+        <div class="spinner4">
+            <div class="circle num1"></div>
+            <div class="circle num2"></div>
+            <div class="circle num3"></div>
+            <div class="circle num4"></div>
         </div>
     </div>
 </body>

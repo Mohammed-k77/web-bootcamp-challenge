@@ -4,7 +4,6 @@ let divElemnts = document.querySelector('.links-continer');
 var liElements = divElemnts.querySelectorAll('li');
 
 function privuosLink(){
-    debugger
     if(amount > -(liElements.length-25)*(100/liElements.length)){
         amount -=100/liElements.length;
         divElemnts.querySelectorAll('ul')[0].style.transform=`translateX(${amount}%)`;
