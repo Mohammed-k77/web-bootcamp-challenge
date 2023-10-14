@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../fontawesome-v6.4.2/css/all.css">
+    <link rel="stylesheet" href="../Assets/css/links.css">
+
+    <title>Document</title>
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box
+        }
+
+        .continer{
+            display: flex;
+            margin: 2% 0%;
+            position: relative;
+            height: 80vh;
+        }
+
+        .current{
+            position: absolute;
+            left: 34%;
+            top: 17%;
+            height: 65%;
+            z-index: 3;
+            width: 30%;
+        }
+
+        .next{
+            position: absolute;
+            height: 65%;
+            opacity: 0.5;
+            right: 4%;
+            width: 30%;
+            top: 15%;
+        } 
+
+        .previous{
+            position: absolute;
+            width: 30%;
+            height: 65%;
+            opacity: 0.5;
+            left: 1%;
+            top: 15%;
+        }
+
+        .previous img , .next img{
+            opacity: 0.5;
+        }
+
+        .circle-show{
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35%;
+            height: 80%;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0px 0px 15px #00000048;
+            right: 34%;
+            top: 12%;
+        }
+
+        .hiddes1 , .hiddes2 , .hiddes3{
+            position: absolute;
+            display: none;
+            width: 35%;
+            height: 80%;
+            right: 34%;
+            top: 12%;
+        }
+
+        .continer .left-link,
+        .continer .right-link{
+            position: absolute;
+            color: white;
+            font-size: 25px;
+            padding: 25px;
+            cursor: pointer;
+            background-color: #00000094;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .continer .left-link{
+            top: 54%;
+            left: 30%;
+        }
+
+        .continer .right-link{
+            top: 54%;
+            right: 33%;
+        }
+
+
+        /****************** Key-Frams ***************/
+
+        @keyframes nextfh1topre{
+            0%{
+                transform: translate();
+            }
+
+            100%{
+                transform: translate();
+            }
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="continer">
+        <i onclick="nextPhoto()" class="fa-solid fa-chevron-left left-link"></i>
+        <i onclick="privuosPhoto()" class="fa-solid fa-chevron-right right-link"></i>
+            <img class="hiddes1" src="../assets/img/luigi.png" alt="loadding">
+            <img class="hiddes2" src="../assets/img/MarioGo.png" alt="loadding">
+            <img class="hiddes3" src="../assets/img/Mario.png" alt="loadding">
+            <img class="current" src="../assets/img/MarioAndLuigi.png" alt="loadding">
+            <img class="previous" src="../assets/img/MarioAndLuigiInCar.png" alt="loadding">
+            <img class="next" src="../assets/img/Yoshi.png" alt="loadding">
+
+            <div class="circle-show">
+
+            </div>
+    </div>
+
+    <div class="links-continer">
+        <a href="../index.html"><i class="fa fas fa-home home-icon"></i></a>
+        <div class="left-right">
+            <i onclick="nextLink()" onclick="privuosLink()" class="fa-solid fa-chevron-left left-link"></i> 
+            <i onclick="privuosLink()" class="fa-solid fa-chevron-right right-link"></i> 
+        </div>
+        <div class="page-links">
+            <ul>
+                <li><a href="./ch1.html">1</a></li>
+                <li><a href="./ch2.html">2</a></li>
+                <li><a href="./ch3.html">3</a></li>
+                <li><a href="./ch4.html">4</a></li>
+                <li><a href="./ch5.html">5</a></li>
+                <li><a href="./ch6.html">6</a></li>
+                <li><a href="./ch7.html">7</a></li>
+                <li><a href="./ch8.html">8</a></li>
+                <li><a href="./ch9.html">9</a></li>
+                <li><a href="./ch10.html">10</a></li>
+                <li><a href="./ch11.html">11</a></li>
+                <li><a href="./ch12.html">12</a></li>
+                <li><a href="./ch13.html">13</a></li>
+                <li><a href="./ch14.html">14</a></li>
+                <li><a href="./ch15.html">15</a></li>
+                <li><a href="./ch16.html">16</a></li>
+                <li><a href="./ch17.html">17</a></li>
+                <li><a href="./ch18.html">18</a></li>
+                <li><a href="./ch19.html">19</a></li>
+                <li><a href="./ch20.html">20</a></li>
+                <li><a href="./ch21.html">21</a></li>
+                <li><a href="./ch22.html">22</a></li>
+                <li><a href="./ch23.html">23</a></li>
+                <li><a href="./ch24.html">24</a></li>
+                <li><a href="./ch25.html">25</a></li>
+                <li><a href="./ch26.html">26</a></li>
+                <li><a href="./ch27.html">27</a></li>
+                <li><a href="./ch28.html">28</a></li>
+                <li><a href="#">29</a></li>
+                <li><a href="#">30</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- from currwnet transform: translate(-175%, -6%) -->
+
+    <!-- from pre transform: translate(77%,6%) -->
+
+    <!-- fro nex transform: translate(-83%, 6%) -->
+
+        <!-- from currwnet transform: translate(175%, -6%) -->
+
+    <script>
+        function nextPhoto(){
+
+            var hiddes1 = document.querySelector('.hiddes1');
+            var imgHiddes1 = hiddes1.querySelectorAll('img')[0];
+
+            var next = document.querySelector('.next');
+            var imgnext = next.querySelectorAll('img')[0];
+
+            var current = document.querySelector('.current');
+            var imgcurrent = current.querySelectorAll('img')[0];
+
+            var previous = document.querySelector('.previous');
+            var imgprevious = previous.querySelectorAll('img')[0];
+
+            imgHiddes1.style.transform='translate(175%, -6%)';
+            imgprevious.style.transform='translate(77%,6%)';
+            imgnext.style.transform='translate(-83%, 6%)';
+            imgcurrent.style.transform='translate(-175%, -6%)';
+
+            // document.getElementById('hiddes3').innerHTML=document.getElementById('previous').innerHTML;
+            // document.getElementById('previous').innerHTML=document.getElementById('current').innerHTML;
+            // document.getElementById('current').innerHTML=document.getElementById('next').innerHTML;
+            // document.getElementById('next').innerHTML=document.getElementById('hiddes1').innerHTML;
+            // document.getElementById('hiddes1').innerHTML=document.getElementById('hiddes2').innerHTML;
+            // document.getElementById('hiddes2').innerHTML=document.getElementById('hiddes3').innerHTML;
+
+        }
+
+        function privuosPhoto(){
+
+            var hiddes3 = document.querySelector('.hiddes3');
+            var imgHiddes3 = hiddes3.querySelectorAll('img')[0];
+
+            var next = document.querySelector('.next');
+            var imgnext = next.querySelectorAll('img')[0];
+
+            var current = document.querySelector('.current');
+            var imgcurrent = current.querySelectorAll('img')[0];
+
+            var previous = document.querySelector('.previous');
+            var imgprevious = previous.querySelectorAll('img')[0];
+
+            imgHiddes3.style.transform='translate(-175%, -6%)';
+            imgprevious.style.transform='translate(-77%,6%)';
+            imgnext.style.transform='translate(83%, 6%)';
+            imgcurrent.style.transform='translate(175%, -6%)';
+
+            // document.getElementById('hiddes3').innerHTML=document.getElementById('hiddes2').innerHTML;
+            // document.getElementById('hiddes2').innerHTML=document.getElementById('hiddes1').innerHTML;
+            // document.getElementById('hiddes1').innerHTML=document.getElementById('next').innerHTML;
+            // document.getElementById('next').innerHTML=document.getElementById('current').innerHTML;
+            // document.getElementById('current').innerHTML=document.getElementById('previous').innerHTML;
+            // document.getElementById('previous').innerHTML=document.getElementById('hiddes3').innerHTML;
+        }
+    </script>
+
+<script src="../fontawesome-v6.4.2/js/all.js"> </script>
+<script src="../Assets/js/links.js"></script>
+</body>
+</html>
