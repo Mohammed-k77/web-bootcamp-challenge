@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../Assets/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="../Assets/css/links.css">
+    
+    <title>Document</title>
+    <style>
+
+        body{
+            background-color: #313131;
+        }
+
+        .container > .container{
+            display: flex;
+            grid-gap: 3em;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+            align-items: center;
+            margin: 2% 0 0 0;
+        }       
+
+        .container textarea{
+            width: 75vh;
+            height: 50vh;
+            overflow: auto;
+            scrollbar-width:none;
+            scrollbar-color: transparent transparent;
+            border-radius: 10px;
+            outline: 2px solid darkgreen;
+        }
+
+        .container textarea:focus{
+            outline: none;
+        }
+
+        #output-area {
+        border: 1px solid #ccc;
+        padding: 10px;
+        height: 200px;
+        background-color: white;
+        overflow: auto;
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent ;
+      }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <button onclick="runCode()" class="btn btn-primary">Run</button>
+        <button onclick="clearCode()" class="btn btn-primary">Clear</button>
+
+        <div class="container">
+            <div class="html">
+                <textarea placeholder="Enter HTML here"></textarea>
+            </div>
+    
+            <div class="css">
+                <textarea placeholder="Enter CSS here"></textarea>
+            </div>
+        </div>
+        <div  id="output-area" class="out-put"></div>
+    </div>
+
+    <script>
+        function runCode(){
+            let html = document.getElementsByTagName('textarea')[0];
+            let css = document.getElementsByTagName('textarea')[1];
+
+            let outPut = document.getElementById('output-area');
+
+            outPut.innerHTML = html.value;
+            let style = document.createElement('style');
+            style.innerHTML=css.value;
+            outPut.appendChild(style);
+        }
+
+        function clearCode(){
+            let html = document.getElementsByTagName('textarea')[0].value="";
+            let css = document.getElementsByTagName('textarea')[1].value=""; 
+            let outPut = document.getElementById('output-area').innerHTML="";
+        }
+
+    </script>
+    <script src="../Assets/lib/fontawesome-v6.4.2/js/all.js"></script>
+    <script src="../Assets/js/links.js"></script>
+
+</body>
+</html>

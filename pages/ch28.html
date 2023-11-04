@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../fontawesome-v6.4.2/css/all.css">
+    <link rel="Stylesheet" href="../Assets/lib/fontawesome-v6.4.2/css/all.css">
     <link rel="stylesheet" href="../Assets/css/links.css">
 
     <title>Document</title>
@@ -50,8 +50,46 @@
             top: 15%;
         }
 
-        .previous img , .next img{
+        .cur-to-pre{
+            position: absolute;
+            width: 30%;
+            height: 65%;
             opacity: 0.5;
+            left: 1%;
+            top: 15%;
+            animation: nextfcurtopre 0.5s linear;
+        }
+
+        .nxt-to-cur{
+            position: absolute;
+            left: 34%;
+            top: 17%;
+            height: 65%;
+            z-index: 3;
+            width: 30%;
+            animation: nextfnxttocur 0.5s linear;
+        }
+
+        .h1-to-nxt{
+            position: absolute;
+            height: 65%;
+            opacity: 0.5;
+            right: 4%;
+            width: 30%;
+            top: 15%;
+            animation: nextfh1tonxt 0.5s linear;
+        }
+
+        .pre-to-h3{
+            position: absolute;
+            display: none;
+            left: 34%;
+            top: 17%;
+            height: 65%;
+            z-index: 3;
+            width: 30%;
+            z-index: -1;
+            animation: nextfpretoh3 0.5s linear;
         }
 
         .circle-show{
@@ -68,13 +106,15 @@
             top: 12%;
         }
 
-        .hiddes1 , .hiddes2 , .hiddes3{
+        .h2-to-h1 , .h3-to-h2 {
             position: absolute;
             display: none;
-            width: 35%;
-            height: 80%;
-            right: 34%;
-            top: 12%;
+            left: 34%;
+            top: 17%;
+            height: 65%;
+            z-index: 3;
+            width: 30%;
+            z-index: -1;
         }
 
         .continer .left-link,
@@ -102,13 +142,60 @@
 
         /****************** Key-Frams ***************/
 
-        @keyframes nextfh1topre{
+        @keyframes nextfcurtopre{
             0%{
-                transform: translate();
+                left: 34%;
+                top: 17%;
+                opacity: 1;
+                z-index: 3;
             }
 
             100%{
-                transform: translate();
+                left: 1%;
+                top: 15%;
+                opacity: 1;
+                z-index: 3;  
+            }
+        }
+
+        @keyframes nextfnxttocur{
+
+            0%{
+                right: 4%;
+                top: 15%;
+                opacity: 1;
+                z-index: 3;
+            }
+
+            100%{
+                left: 34%;
+                top: 17%;
+                opacity: 1;
+                z-index: 3;
+            }
+        }
+
+        @keyframes nextfh1tonxt{
+            0%{
+                left: 34%;
+                top: 17%;
+            }
+
+            100%{
+                right: 4%;
+                top: 15%;
+            }
+        }
+
+        @keyframes nextfpretoh3{
+            0%{
+                left: 1%;
+                top: 15%;
+            }
+
+            100%{
+                left: 34%;
+                top: 17%;
             }
         }
 
@@ -123,87 +210,66 @@
     <div class="continer">
         <i onclick="nextPhoto()" class="fa-solid fa-chevron-left left-link"></i>
         <i onclick="privuosPhoto()" class="fa-solid fa-chevron-right right-link"></i>
-            <img class="hiddes1" src="../assets/img/luigi.png" alt="loadding">
-            <img class="hiddes2" src="../assets/img/MarioGo.png" alt="loadding">
-            <img class="hiddes3" src="../assets/img/Mario.png" alt="loadding">
-            <img class="current" src="../assets/img/MarioAndLuigi.png" alt="loadding">
-            <img class="previous" src="../assets/img/MarioAndLuigiInCar.png" alt="loadding">
-            <img class="next" src="../assets/img/Yoshi.png" alt="loadding">
+            <img class="h2-to-h1" src="../assets/img/luigi.png" alt="loadding">
+            <img class="h3-to-h2" src="../assets/img/MarioGo.png" alt="loadding">
+            <img class="pre-to-h3" src="../assets/img/Mario.png" alt="loadding">
+            <img class="nxt-to-cur" src="../assets/img/MarioAndLuigi.png" alt="loadding">
+            <img class="h1-to-nxt" src="../assets/img/MarioAndLuigiInCar.png" alt="loadding">
+            <img class="cur-to-pre" src="../assets/img/Yoshi.png" alt="loadding">
 
             <div class="circle-show">
 
             </div>
     </div>
 
-    <div class="links-continer">
-        <a href="../index.html"><i class="fa fas fa-home home-icon"></i></a>
-        <div class="left-right">
-            <i onclick="nextLink()" onclick="privuosLink()" class="fa-solid fa-chevron-left left-link"></i> 
-            <i onclick="privuosLink()" class="fa-solid fa-chevron-right right-link"></i> 
-        </div>
-        <div class="page-links">
-            <ul>
-                <li><a href="./ch1.html">1</a></li>
-                <li><a href="./ch2.html">2</a></li>
-                <li><a href="./ch3.html">3</a></li>
-                <li><a href="./ch4.html">4</a></li>
-                <li><a href="./ch5.html">5</a></li>
-                <li><a href="./ch6.html">6</a></li>
-                <li><a href="./ch7.html">7</a></li>
-                <li><a href="./ch8.html">8</a></li>
-                <li><a href="./ch9.html">9</a></li>
-                <li><a href="./ch10.html">10</a></li>
-                <li><a href="./ch11.html">11</a></li>
-                <li><a href="./ch12.html">12</a></li>
-                <li><a href="./ch13.html">13</a></li>
-                <li><a href="./ch14.html">14</a></li>
-                <li><a href="./ch15.html">15</a></li>
-                <li><a href="./ch16.html">16</a></li>
-                <li><a href="./ch17.html">17</a></li>
-                <li><a href="./ch18.html">18</a></li>
-                <li><a href="./ch19.html">19</a></li>
-                <li><a href="./ch20.html">20</a></li>
-                <li><a href="./ch21.html">21</a></li>
-                <li><a href="./ch22.html">22</a></li>
-                <li><a href="./ch23.html">23</a></li>
-                <li><a href="./ch24.html">24</a></li>
-                <li><a href="./ch25.html">25</a></li>
-                <li><a href="./ch26.html">26</a></li>
-                <li><a href="./ch27.html">27</a></li>
-                <li><a href="./ch28.html">28</a></li>
-                <li><a href="#">29</a></li>
-                <li><a href="#">30</a></li>
-            </ul>
-        </div>
-    </div>
 
-    <!-- from currwnet transform: translate(-175%, -6%) -->
-
-    <!-- from pre transform: translate(77%,6%) -->
-
-    <!-- fro nex transform: translate(-83%, 6%) -->
-
-        <!-- from currwnet transform: translate(175%, -6%) -->
 
     <script>
+            // <!-- from currwnet transform: translate(-175%, -6%) -->
+
+            // <!-- from pre transform: translate(77%,6%) -->
+
+            // <!-- fro nex transform: translate(-83%, 6%) -->
+
+            // <!-- from currwnet transform: translate(175%, -6%) -->
+
         function nextPhoto(){
+            let img1 = document.getElementsByClassName('nxt-to-cur')[0];
+            let img2 = document.getElementsByClassName('cur-to-pre')[0];
+            let img3 = document.getElementsByClassName('h1-to-nxt')[0];
+            let img4 = document.getElementsByClassName('pre-to-h3')[0];
+            let img5 = document.getElementsByClassName('h3-to-h2')[0];
+            let img6 = document.getElementsByClassName('h2-to-h1')[0];
+            img1.classList.add('cur-to-pre');
+            img2.classList.add('pre-to-h3');
+            img3.classList.add('nxt-to-cur');
+            img4.classList.add('h3-to-h2');
+            img5.classList.add('h2-to-h1');
+            img6.classList.add('h1-to-nxt');
+            img1.classList.remove('nxt-to-cur');
+            img2.classList.remove('cur-to-pre');
+            img3.classList.remove('h1-to-nxt');
+            img4.classList.remove('pre-to-h3');
+            img5.classList.remove('h3-to-h2');
+            img6.classList.remove('h2-to-h1');
 
-            var hiddes1 = document.querySelector('.hiddes1');
-            var imgHiddes1 = hiddes1.querySelectorAll('img')[0];
 
-            var next = document.querySelector('.next');
-            var imgnext = next.querySelectorAll('img')[0];
+            // var hiddes1 = document.querySelector('.hiddes1');
+            // var imgHiddes1 = hiddes1.querySelectorAll('img')[0];
 
-            var current = document.querySelector('.current');
-            var imgcurrent = current.querySelectorAll('img')[0];
+            // var next = document.querySelector('.next');
+            // var imgnext = next.querySelectorAll('img')[0];
 
-            var previous = document.querySelector('.previous');
-            var imgprevious = previous.querySelectorAll('img')[0];
+            // var current = document.querySelector('.current');
+            // var imgcurrent = current.querySelectorAll('img')[0];
 
-            imgHiddes1.style.transform='translate(175%, -6%)';
-            imgprevious.style.transform='translate(77%,6%)';
-            imgnext.style.transform='translate(-83%, 6%)';
-            imgcurrent.style.transform='translate(-175%, -6%)';
+            // var previous = document.querySelector('.previous');
+            // var imgprevious = previous.querySelectorAll('img')[0];
+
+            // imgHiddes1.style.transform='translate(175%, -6%)';
+            // imgprevious.style.transform='translate(77%,6%)';
+            // imgnext.style.transform='translate(-83%, 6%)';
+            // imgcurrent.style.transform='translate(-175%, -6%)';
 
             // document.getElementById('hiddes3').innerHTML=document.getElementById('previous').innerHTML;
             // document.getElementById('previous').innerHTML=document.getElementById('current').innerHTML;
@@ -242,7 +308,7 @@
         }
     </script>
 
-<script src="../fontawesome-v6.4.2/js/all.js"> </script>
+<script src="../Assets/lib/fontawesome-v6.4.2/js/all.js"></script>
 <script src="../Assets/js/links.js"></script>
 </body>
 </html>

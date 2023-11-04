@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../assets/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/lib/fontawesome-free-6.4.2-web/css/all.css">
+    <link rel="stylesheet" href="../Assets/css/links.css">
+
+    <title>Add To Cart </title>
+    <style>
+
+        body,html{
+            height: 100%;
+            width: 100%;
+        }
+
+        .my-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .content{
+            border-radius: 10px;
+            width: 15%;
+            font-weight: bold;
+            font-size: 20px;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            align-items: center;
+            position: relative;
+        }
+
+        .content p{
+            margin: 1rem;
+            user-select: none;
+        }
+
+        .c-circle ,
+        .s-circle{
+            width: 28px;
+            text-align: center;
+            font-size: 18px;
+            background-color: black;
+            color: white;
+            position: absolute;
+            border-radius: 50%;
+            user-select: none;
+        }
+
+        .c-circle{
+            top: -18%;
+            right: -3%;
+        }
+
+        .s-circle{
+            right: -43%;
+            top: -48%;
+            display: none;
+            font-weight: bold;
+            background-color: red;
+            color: black;
+        }
+
+        .cart-container{
+            position: absolute;
+            top: 6%;
+            right: 6%;
+        }
+
+        .cart-icon{
+            font-size: 35px;
+            color: black;
+        }
+        
+        .plus-icon{
+            color: white;
+            margin: 1rem;
+            font-size: 25px;
+        }
+
+
+        #add-to-card{
+            cursor: pointer;
+            border-left: 1px solid white;
+        }
+
+        .animate{
+            animation: fly 0.5s linear;
+        }
+
+        .increase{
+            background-color: green;
+            color: white;
+        }
+
+        .s-circle-animation{
+            animation: s-circle 0.4s linear;
+        }
+        @keyframes s-circle {
+            0%{
+                transform:scale(1);
+                color: white;
+            }
+
+            100%{
+                transform:scale(1.2)
+            }
+        }
+
+        @keyframes fly {
+            0%{
+                transform: translate(37px, -142px);
+            }
+
+            20%{
+                transform: translate(115px, -211px);
+            }
+
+            100%{
+                transform: translate(481px, -266px);      
+            }
+        }
+
+</style>
+</head>
+    <body>
+
+    <div class="my-container">
+        <div class="cart-container">
+            <i class="fa fas fa-cart-plus cart-icon"></i>
+            <div class="s-circle" id="s-circle">0</div>
+        </div>
+        <div class="content">
+            <div style="cursor: pointer;" id="plus">   
+                <i class="fa fa-plus plus-icon" id="plus-icon"></i>
+            </div>
+            <div id="add-to-card">   
+                <div class="c-circle" id="c-circle">0</div>
+                <p>Add to Cart</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/lib/jquery-3.7.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        
+        let stackCounter =0;
+        let counter=0;
+
+        $('#add-to-card').click(function(){
+            if(counter>0){
+                $('#c-circle').addClass('animate');
+                $('#s-circle').removeClass('s-circle-animation');
+                stackCounter+=counter;
+                counter=0;
+                setTimeout(function(){
+                    $('#c-circle').removeClass('animate');
+                    $('#c-circle').removeClass('increase');
+                    $('#c-circle').html(`${counter}`);
+                    $('#s-circle').addClass('s-circle-animation');
+                    $('#s-circle').css("display","block",200);     
+                    $('#s-circle').html(`${stackCounter}`,200);  
+                },500)
+            }
+        })
+
+        $('#plus').click(function(){
+            counter+=1;
+            $('#plus-icon').css('color',"red",200);
+            setTimeout(function(){
+                $('#plus-icon').css('color',"white");
+                $('#c-circle').addClass('increase');
+                $('#c-circle').html(`${counter}`);
+            },200)
+
+        })
+    });
+    </script>
+    <script src="../Assets/lib/jquery-3.7.1.min.js"></script>
+    <script src="../Assets/lib/fontawesome-v6.4.2/js/all.js"></script>
+    <script src="../Assets/js/links.js"></script>
+</body>
+</html>

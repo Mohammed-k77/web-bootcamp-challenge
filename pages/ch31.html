@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../assets/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/lib/fontawesome-v6.4.2/css/all.css">
+        <link rel="stylesheet" href="../Assets/css/links.css">
+
+    <title>Like </title>
+    <style>
+
+        body,html{
+            height: 100%;
+        }
+
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .content{
+            height: 25%;
+            border-radius: 10px;
+            width: 30%;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .like{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            grid-gap: 2em;
+            height: 50px;
+            width: 200px;
+            font-weight: bold;
+            background-color: white;
+            color: black;
+            font-size: 20px;
+            border-radius: 15px;
+        }
+
+        .heart-icon{
+            color: red;
+        }
+
+        .heart-clicked{
+            animation: clicked 1s linear;
+        }
+
+        @keyframes clicked {
+            0%{
+                transform: translateX(0px) scale(1);
+            }
+            50%{
+                transform: translateX(70px) scale(1.5);
+            }
+            100%{
+                transform: translateX(0px) scale(1);
+            }
+        }
+
+        #like-word ,
+        #counter{
+            margin: 0;
+        }
+
+</style>
+</head>
+    <body>
+
+    <div class="container">
+        <div class="content">
+            <div style="cursor: pointer;" class="like" id="like">
+                <i id="like-icon" class="fa-regular fa-heart heart-icon"></i>
+                <p id="like-word">Like</p>
+                <p id="counter">29</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/lib/jquery-3.7.1.min.js"></script>
+    <script>
+        let c=29;
+    $(document).ready(function(){
+            $('#like').click(function(){
+                if($('#like-icon').hasClass('fa-regular')){
+                    c+=1;
+                    $('#like-icon').addClass('fa-solid');
+                $('#like-icon').removeClass('fa-regular');
+                $('#like').animate({width:'50px'}, 500 );
+                $('#like-icon').toggleClass('heart-clicked');
+                $('#like-word').animate({opacity:'0'}, 500 );
+                $('#like').animate({width:'200px'});
+                $('#like-word').animate({opacity:'1'}, 500 );
+                setTimeout(function() {
+                    $('#counter').html(c);
+                    $('#like-word').html('Liked',1000);
+                }, 500);
+
+                }
+                else{
+                     c-=1;
+                $('#like-icon').addClass('fa-regular');
+                $('#like-icon').removeClass('fa-solid');
+                $('#like').animate({width:'50px'}, 500 );
+                $('#like-icon').toggleClass('heart-clicked');
+                $('#like-word').animate({opacity:'0'}, 500 );
+                $('#like').animate({width:'200px'});
+                $('#like-word').animate({opacity:'1'}, 500 );
+                setTimeout(function() {
+                    $('#counter').html(c);
+                    $('#like-word').html('Like',1000);
+                }, 500);
+                }
+                
+            })
+                    
+        });
+    </script>
+    <script src="../assets/js/links.js"></script>
+</body>
+</html>
