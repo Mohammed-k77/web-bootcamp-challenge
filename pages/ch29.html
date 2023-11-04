@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../assets/lib/fontawesome-v6.4.2/css/all.css">
+    <link rel="stylesheet" href="../Assets/css/links.css">
+    <title>Document</title>
+
+    <style>
+       
+       *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html , body{
+            height: 100%;
+            font-family: fantasy;
+            background-color: #1f1f1f;
+        }
+
+        .continer{
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;    
+            grid-gap: 4em;      
+        }
+
+        .continer .deseding-counter ,
+        .continer .increasing-counter{
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            grid-gap: 0.5em;
+        }
+
+        .continer .time-now {
+            width: 40%;
+            grid-gap: 0em;
+            display: flex;
+            width: 30%;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            grid-gap: 0.5em;
+        }
+
+        .lables{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-gap: 3em;
+            color: white;
+        }
+
+        .input-cols{
+            display: flex;
+            grid-gap: 1em;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hour , .minute , .second {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 6em;
+            width: 6em;
+            align-items: center;
+            grid-gap: 1em;
+            overflow: hidden;
+        }
+
+        .continer .deseding-counter ul,
+        .increasing-counter ul{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            grid-gap: 1em;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .continer .deseding-counter ul li,
+        .increasing-counter ul li{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 1em;
+            height: 1em;
+            text-align: center;
+            color: white;
+            background-color: transparent;
+            border: none;
+            border-radius: 10px;
+            font-size: 70px;
+        }
+
+        .hour-continer , .minute-continer,.second-continer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .up-icon, .down-icon{
+            font-size: 22px;
+            font-weight: 900;
+            color: white;
+            cursor: pointer;
+        }
+
+        
+        .continer .time-now .col{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1em;
+            height: 1em;
+            text-align: center;
+            color: white;
+            background-color: transparent;
+            border: none;
+            border-radius: 10px;
+            font-size: 70px;
+        }
+
+        .continer .col:nth-child(3),
+        .continer .col:nth-child(6){
+            width: 0.5em;
+            height: 0.5em;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+            background-color: transparent;
+            box-shadow:none;
+        }
+
+        /* Animation Calss */
+
+        .shift-col1{
+            animation: shift-col1 1s linear infinite;
+        }
+
+        .shift{
+            animation: shift 1s linear;
+        }
+
+        @keyframes shift-col1{
+            0%{
+                top: 0px;
+            }
+
+            20%{
+                top: 0px;
+            }
+
+            60%{
+                top: 0px;
+            }
+
+            80%{
+                top: 65px;
+                visibility: hidden;
+            }
+
+            95%{
+                top: -65px;
+                visibility: hidden;
+            }
+
+            100%{
+                top: 0px;                  
+            }
+        }
+
+        @keyframes shift{
+            0%{
+                top: 0px;
+            }
+
+            20%{
+                top: 0px;
+            }
+
+            60%{
+                top: 0px;
+            }
+
+            80%{
+                top: 65px;
+                visibility: hidden;
+            }
+
+            95%{
+                top: -65px;
+                visibility: hidden;
+            }
+
+            100%{
+                top: 0px;                  
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="continer">
+
+        <div class="time-now">
+            <div class="col">
+                <p>0</p>
+            </div>
+            <div class="col">
+                <p>0</p>
+            </div>
+            <div class="col">
+                <p>:</p>
+            </div>
+            <div class="col">
+                <p>0</p>
+            </div>
+            <div class="col">
+                <p>0</p>
+            </div>
+            <div class="col">
+                <p>:</p>
+            </div>
+            <div class="col">
+                <p>0</p>
+            </div>
+            <div class="col">
+                <p>0</p>
+            </div>
+        </div>
+     
+        <div class="deseding-counter">
+            <div class="input-cols">
+                <div class="hour-continer">
+                    <p>Hour</p>
+                    <i onclick="upOne(12)" class="fa-solid fa-angle-up up-icon"></i>
+                    <div class="hour">
+                        <ul>
+                        </ul>
+                    </div>
+                    <i onclick="dwonOne(12)" class="fa-solid fa-angle-down down-icon"></i>
+                </div>
+                <div class="minute-continer">
+                    <p>Minute</p>
+                    <i onclick="upOne(30)" class="fa-solid fa-angle-up up-icon"></i>
+                    <div class="minute">
+                        <ul>
+                        </ul>
+                    </div>
+                    <i onclick="dwonOne(30)" class="fa-solid fa-angle-down down-icon"></i>
+                </div>
+                <div class="second-continer">
+                    <p>Second</p>
+                    <i onclick="upOne(60)" class="fa-solid fa-angle-up up-icon"></i>
+                    <div class="second">
+                        <ul>
+                        </ul>
+                    </div>
+                    <i onclick="dwonOne(60)" class="fa-solid fa-angle-down down-icon"></i>
+                </div>
+            </div>
+            <div style="display: none;" class="counter-cols">
+                <div class="col">
+                    <p>0</p>
+                </div>
+                <div class="col">
+                    <p>0</p>
+                </div>
+                <div class="col">
+                    <p>:</p>
+                </div>
+                <div class="col">
+                    <p>0</p>
+                </div>
+                <div class="col">
+                    <p>0</p>
+                </div>
+                <div class="col">
+                    <p>:</p>
+                </div>
+                <div class="col">
+                    <p>0</p>
+                </div>
+                <div class="col">
+                    <p>0</p>
+                </div>
+            </div>
+        </div> 
+
+        <div class="increasing-counter">
+            <div class="input-cols">
+                <div class="hour-continer">
+                    <p>Hour</p>
+                    <i class="fa-solid fa-angle-up up-icon"></i>
+                    <div class="hour">
+                        <ul>
+                        </ul>
+                    </div>
+                    <i class="fa-solid fa-angle-down down-icon"></i>
+                </div>
+                <div class="minute-continer">
+                    <p>Minute</p>
+                    <i class="fa-solid fa-angle-up up-icon"></i>
+                    <div class="minute">
+                        <ul>
+                        </ul>
+                    </div>
+                    <i class="fa-solid fa-angle-down down-icon"></i>
+                </div>
+                <div class="second-continer">
+                    <p>Second</p>
+                    <i class="fa-solid fa-angle-up up-icon"></i>
+                    <div class="second">
+                        <ul>
+                        </ul>
+                    </div>
+                    <i class="fa-solid fa-angle-down down-icon"></i>
+                </div>
+            </div>
+            <div style="display: none;" class="counter-cols">
+                <div class="col">
+                    <p>0</p>
+                </div>
+                <div class="col">
+                    <p>0</p>
+                </div>
+                <div class="col">
+                    <p>:</p>
+                </div>
+                <div class="col">
+                    <p>0</p>
+                </div>
+                <div class="col">
+                    <p>0</p>
+                </div>
+                <div class="col">
+                    <p>:</p>
+                </div>
+                <div class="col">
+                    <p>0</p>
+                </div>
+                <div class="col">
+                    <p>0</p>
+                </div>
+            </div>
+        </div>       
+
+    </div>
+
+    <script src="../Assets/js/links.js"></script>
+
+    <script>
+
+        //#region View Time Now
+
+        const timeNowDiv = document.querySelector('.time-now'); 
+        var timeNowCols = timeNowDiv.querySelectorAll('.col');
+        var timeNowcolsP = timeNowDiv.querySelectorAll('p');
+        setInterval(() => {
+            setTime();
+        }, 1000);
+
+        function setTime(){
+            let date = new Date();
+            let hour = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+
+            timeNowcolsP[0].innerHTML=Math.floor(hour/10);
+            timeNowcolsP[1].innerHTML=Math.floor(hour%10);
+            timeNowcolsP[3].innerHTML=Math.floor(minutes/10);
+            timeNowcolsP[4].innerHTML=Math.floor(minutes%10);
+            timeNowcolsP[6].innerHTML=Math.floor(seconds/10);
+            timeNowcolsP[7].innerHTML=Math.floor(seconds%10);
+
+            timeNowCols[7].classList.add('shift-col1');
+            
+            if(timeNowcolsP[7].innerHTML==9)
+            {
+               timeNowCols[6].classList.add('shift');      
+            }
+            else{
+               timeNowCols[6].classList.remove('shift');                
+            }
+
+            if(timeNowcolsP[6].innerHTML==5 && timeNowcolsP[7].innerHTML==9)
+            {
+               timeNowCols[4].classList.add('shift');                
+            }
+            else{
+               timeNowCols[4].classList.remove('shift');                
+            }
+            if(timeNowcolsP[4].innerHTML==9 && timeNowcolsP[6].innerHTML==5 && timeNowcolsP[7].innerHTML==9)
+            {
+               timeNowCols[3].classList.add('shift');               
+            }
+            else{
+               timeNowCols[3].classList.remove('shift');                
+            }
+            if(timeNowcolsP[3].innerHTML==5 && timeNowcolsP[4].innerHTML==9 &&
+             timeNowcolsP[6].innerHTML==5 && timeNowcolsP[7].innerHTML==9)
+            {
+               timeNowCols[1].classList.add('shift');               
+            }
+            else{
+               timeNowCols[1].classList.remove('shift');                
+            }
+            if(timeNowcolsP[1].innerHTML==9 && timeNowcolsP[3].innerHTML==5 &&
+             timeNowcolsP[4].innerHTML==9 && timeNowcolsP[6].innerHTML==5 && timeNowcolsP[7].innerHTML==9)
+            {
+               timeNowCols[0].classList.add('shift');               
+            }
+            else{
+               timeNowCols[0].classList.remove('shift');                
+            }
+
+        }
+   
+        //#endregion View Time Now
+
+        //#region [NAME] fill Counters
+
+        let hourList1 = document.getElementsByClassName('hour')[0].querySelectorAll('ul')[0];
+        let hourList2 = document.getElementsByClassName('hour')[1].querySelectorAll('ul')[0];
+        let minutesList1 = document.getElementsByClassName('minute')[0].querySelectorAll('ul')[0];
+        let minutesList2 = document.getElementsByClassName('minute')[1].querySelectorAll('ul')[0];
+        let secondsList1 = document.getElementsByClassName('second')[0].querySelectorAll('ul')[0];
+        let secondsList2 = document.getElementsByClassName('second')[1].querySelectorAll('ul')[0];
+        for(let i =0 ; i<=12;i++){
+            let li1 = document.createElement('li');
+            li1.innerHTML=i;
+            hourList1.appendChild(li1);
+            let li2 = document.createElement('li');
+            li2.innerHTML=i;
+            hourList2.appendChild(li2);
+        }
+            
+        for(let i =0 ; i<=30;i++){
+            let li1 = document.createElement('li');
+            li1.innerHTML=i;
+            minutesList1.appendChild(li1);
+            let li2 = document.createElement('li');
+            li2.innerHTML=i;
+            minutesList2.appendChild(li2);
+        }
+
+        for(let i =0 ; i<=60;i++){
+            let li1 = document.createElement('li');
+            li1.innerHTML=i;
+            secondsList1.appendChild(li1);
+            let li2 = document.createElement('li');
+            li2.innerHTML=i;
+            secondsList2.appendChild(li2);
+        }
+
+        //#endregion fill Counters
+        
+        //#region upOne & dwonOne functions
+        // function upOne(type,amount){
+        //     if(type=="desed"&&amount=="hour"){
+        //         let change = 0;
+        //         if(change)
+        //     }
+        // }
+        //#endregion upOne & dwonOne functions
+   </script>
+
+</body>
+</html>
