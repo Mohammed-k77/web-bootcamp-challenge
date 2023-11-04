@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="../fontawesome-v6.4.2/css/all.css">
+  <link rel="stylesheet" href="../assets/lib/fontawesome-v6.4.2/css/all.css">
   <link rel="stylesheet" href="../Assets/css/links.css">
   <link href="./assets/css/style.css">
 
@@ -16,6 +16,11 @@
     *,body{
     margin: 0;
     padding: 0;
+    }
+
+    .my-container{
+      width: 100%;
+      display: flex;
     }
 
     table{
@@ -67,32 +72,31 @@
     box-sizing: border-box;
     }
 
-aside h3 {
-  margin-top: 90px;
-  margin-bottom: 80px;
-}
+    aside h3 {
+      margin-top: 90px;
+      margin-bottom: 80px;
+    }
 
-aside ul  {
-    display: inline-block;
-    list-style: none;
-}
+    aside ul  {
+        display: inline-block;
+        list-style: none;
+    }
 
-aside ul li{
-  margin-bottom: 20px;
-}
+    aside ul li{
+      margin-bottom: 20px;
+    }
 
- aside ul li a:link{
-    text-decoration: none;
-    color: #fff;
-
-}
+    aside ul li a{
+        text-decoration: none;
+        color: #fff;
+    }
 
     main{
       display: inline-block;
       vertical-align: top;
       width: 75%;
       box-sizing: border-box;
-      margin: 0 0 3% 0;
+      margin: 0px 0 3% 25%;
     }
 
   main >h1{
@@ -182,158 +186,160 @@ aside ul li{
   </style>
 </head>
 <body>
-  <aside>
-    <h3>El creativo</h3>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#Showcase">Showcase</a></li>
-      <li><a href="#Services">Services</a></li>
-      <li><a href="#designers">Designers</a></li>
-      <li><a href="#Packages">Packages</a></li>
-      <li><a href="#Contact">Contact</a></li>
-    </ul>
-  </aside>
+  <div class="my-container">
+    <aside>
+      <h3>El creativo</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#showcase">Showcase</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#designers">Designers</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </aside>
 
-  <main>
-    <h1>El creativo</h1>
-    <section id="showcase">
-      <h2 ><span class="twoletter">sh</span>owcase</h2>
-      <div>
-        <img src="../Assets/img/kitchenconcrete.jpg" alt="">
-        <img src="../Assets/img/atrium.jpg" alt="">
-        <img src="../Assets/img/livingroom.jpg" alt="">
-        <img src="../Assets/img/diningroom.jpg" alt="">
-        <img src="../Assets/img/livingroom2.jpg" alt="">
-        <img src="../Assets/img/livingroom2.jpg" alt="">
-
-      </div>
-    </section>
-
-    <section id="services">
-      <h2><span class="twoletter">Se</span>rvices.</h2>
-       <p>We are a interior design service that focus on what's best for your home and what's best for you!</p>
-        <p>Some text about our services - what we do and what we offer. We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-      </section>
-
-      <section id="designers">
-        <h2 ><span class="twoletter">De</span>signers.</h2>
-        <p>The best team in the world.</p>
-        <p>We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-        <p style="font-weight: bold;">Our designers are thoughtfully chosen:</p>
-
-        <div class="card">
-          <div>
-            <img src="../Assets/img/team2.jpg" alt="">
-          </div>
-          <div>
-            <h3>John Doe</h3>
-              <h5>CEO & Founder</h5>
-              <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>           
-          </div>
+    <main>
+      <h1>El creativo</h1>
+      <section id="showcase">
+        <h2 ><span class="twoletter">sh</span>owcase</h2>
+        <div>
+          <img src="../Assets/img/kitchenconcrete.jpg" alt="">
+          <img src="../Assets/img/atrium.jpg" alt="">
+          <img src="../Assets/img/livingroom.jpg" alt="">
+          <img src="../Assets/img/diningroom.jpg" alt="">
+          <img src="../Assets/img/livingroom2.jpg" alt="">
+          <img src="../Assets/img/livingroom2.jpg" alt="">
+  
         </div>
-
-        <div class="card">
-          <div>
-            <img src="../Assets/img/team1.jpg" alt="">
-          </div>
-          <div>
-            <h3>John Doe</h3>
-            <h5>Designer</h5>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div>
-            <img src="../Assets/img/team3.jpg" alt="">
-          </div>
-          <div>
-            <h3>Mike Ross</h3>
-            <h5>Architect</h5>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          </div>
-         </div>
-
-
       </section>
-
-      <section id="packages"> 
-        <h2><span class="twoletter">pa</span>ckages.</h2>
-        <p>Some text our prices. Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
-      
-        <table>
-          <tr>
-            <th class="gray">Basic</th>
-            <th class="red">Pro</th>
-          </tr>
-
-          <tr>
-            <td>Floorplanning</td>
-            <td>Floorplanning</td>
-          </tr>
-
-          <tr>
-            <td>10 hours support</td>
-            <td>50 hours support</td>
-          </tr>
-
-          <tr>
-            <td>Photography</td>
-            <td>Photography</td>
-          </tr>
-
-          <tr>
-            <td>20% furniture discound</td>
-            <td>50% furniture discound</td>
-          </tr>
-
-          <tr>
-           <td>Good deals</td> 
-           <td>GREAT deals</td> 
-          </tr>
-
-          <tr>
-            <td>
-              <h3>$ 199</h3>
-              <p style="color: #a4a4a4;">Per room</p>
-            </td>
-            <td>
-              <h3>$ 249</h3>
-              <p>Per room</p>
-            </td>
-
+  
+      <section id="services">
+        <h2><span class="twoletter">Se</span>rvices.</h2>
+         <p>We are a interior design service that focus on what's best for your home and what's best for you!</p>
+          <p>Some text about our services - what we do and what we offer. We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </section>
+  
+        <section id="designers">
+          <h2 ><span class="twoletter">De</span>signers.</h2>
+          <p>The best team in the world.</p>
+          <p>We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          <p style="font-weight: bold;">Our designers are thoughtfully chosen:</p>
+  
+          <div class="card">
+            <div>
+              <img src="../Assets/img/team2.jpg" alt="">
+            </div>
+            <div>
+              <h3>John Doe</h3>
+                <h5>CEO & Founder</h5>
+                <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>           
+            </div>
+          </div>
+  
+          <div class="card">
+            <div>
+              <img src="../Assets/img/team1.jpg" alt="">
+            </div>
+            <div>
+              <h3>John Doe</h3>
+              <h5>Designer</h5>
+              <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            </div>
+          </div>
+  
+          <div class="card">
+            <div>
+              <img src="../Assets/img/team3.jpg" alt="">
+            </div>
+            <div>
+              <h3>Mike Ross</h3>
+              <h5>Architect</h5>
+              <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            </div>
+           </div>
+  
+  
+        </section>
+  
+        <section id="packages"> 
+          <h2><span class="twoletter">pa</span>ckages.</h2>
+          <p>Some text our prices. Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
+        
+          <table>
+            <tr>
+              <th class="gray">Basic</th>
+              <th class="red">Pro</th>
+            </tr>
+  
+            <tr>
+              <td>Floorplanning</td>
+              <td>Floorplanning</td>
+            </tr>
+  
+            <tr>
+              <td>10 hours support</td>
+              <td>50 hours support</td>
+            </tr>
+  
+            <tr>
+              <td>Photography</td>
+              <td>Photography</td>
+            </tr>
+  
+            <tr>
+              <td>20% furniture discound</td>
+              <td>50% furniture discound</td>
+            </tr>
+  
+            <tr>
+             <td>Good deals</td> 
+             <td>GREAT deals</td> 
+            </tr>
+  
             <tr>
               <td>
-                <a href="#" style="background-color: #fff; color: black;" > Sing up</a>
+                <h3>$ 199</h3>
+                <p style="color: #a4a4a4;">Per room</p>
               </td>
               <td>
-                <a href="#" style="background-color: #f44336;"> Sing up</a>
+                <h3>$ 249</h3>
+                <p>Per room</p>
               </td>
+  
+              <tr>
+                <td>
+                  <a href="#" style="background-color: #fff; color: black;" > Sing up</a>
+                </td>
+                <td>
+                  <a href="#" style="background-color: #f44336;"> Sing up</a>
+                </td>
+              </tr>
+              
             </tr>
-            
-          </tr>
-        </table>
-      </section>
-
-      <section id="contact">
-        <h2><span class="twoletter">Co</span>ntact.</h2>
-        <p>Do you want us to style your home? Fill out the form and fill me in with the details :) We love meeting new people!</p>
-        <form action="">
-          <label class="mylabel" for="">Name</label>
-          <input class="inputFaild" type="text">
-
-          <label class="mylabel" for="">Email</label>
-          <input class="inputFaild" type="email">
-
-          <label class="mylabel" for="">Message</label>
-          <input class="inputFaild"  type="text">
-
-          <input class="btnSubmit" type="submit" value="Send Message">
-        </form>
-      </section>
-
-  </main>
+          </table>
+        </section>
+  
+        <section id="contact">
+          <h2><span class="twoletter">Co</span>ntact.</h2>
+          <p>Do you want us to style your home? Fill out the form and fill me in with the details :) We love meeting new people!</p>
+          <form action="">
+            <label class="mylabel" for="">Name</label>
+            <input class="inputFaild" type="text">
+  
+            <label class="mylabel" for="">Email</label>
+            <input class="inputFaild" type="email">
+  
+            <label class="mylabel" for="">Message</label>
+            <input class="inputFaild"  type="text">
+  
+            <input class="btnSubmit" type="submit" value="Send Message">
+          </form>
+        </section>
+  
+    </main>
+  </div>
 
 <script src="../fontawesome-v6.4.2/js/all.js"> </script>
 <script src="../Assets/js/links.js"></script>
